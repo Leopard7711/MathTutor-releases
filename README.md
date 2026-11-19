@@ -53,8 +53,11 @@ Claude AI가 1:1로 대학 수학을 가르쳐 주는 Windows 데스크톱 앱�
 | Claude Opus (기본) | 가장 깊고 정확한 설명 | 공부 1시간에 약 $2~3 |
 | Claude Sonnet | 일반 개념 설명과 문제 풀이는 충분 | 약 절반 |
 | Claude Haiku | 복습·연습·짧은 질문용 | 훨씬 저렴 |
-| GPT-6.1 Sol / Terra | OpenAI 키로 쓰는 중간·저가 모델 | Sonnet보다 조금 싸거나(Sol) 절반(Terra) |
-| Gemini 4 Neon | Google 키로 쓰는 상위 모델 | Sonnet보다 조금 비싸고 Opus보다 싸요 |
+| Claude Fable | Claude 최상위, 가장 어려운 추론용 | Opus의 약 2배 |
+| GPT-6.2 Astra / Sol / Terra | OpenAI 키로 쓰는 상위·중간·저가 모델 | Opus 2배(Astra), Sonnet과 비슷(Sol), 절반(Terra) |
+| Gemini 4 Carbon / Neon / Hydrogen | Google 키로 쓰는 최상위·상위·중간 모델 | Sonnet과 비슷(Carbon, 12월부터 2배)·조금 비쌈(Neon)·조금 쌈(Hydrogen) |
+
+새 모델이 나오면 앱이 모델 목록을 하루 한 번 받아 자동으로 더하고, 예전 같은 등급 모델을 쓰던 설정은 새 모델로 바꿔요.
 
 실제 비용은 질문 길이와 양에 따라 달라요. 설정의 "비용 절약 모드"를 켜면 채점·힌트처럼 단순한 단계의 비용이 줄어요.
 긴 대화를 오래 쉬었다가 이어 가면 첫 답이 비싸지는데, 그럴 땐 앱이 "새로 시작 / 이어 가기"를 먼저 물어봐요.
