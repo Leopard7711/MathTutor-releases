@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "updated": "2026-11-19",
+ "note": "튜터 앱 모델 목록. 새 모델이 나오면 models에 더하고, 같은 등급 예전 모델은 replace에 '예전 → 새'로 적는다. 가격은 100만 토큰당 달러. 원본은 TutorApps 저장소 TutorCore/models.json, 앱은 MathTutor-releases의 사본을 하루 한 번 받는다.",
+ "models": {
+  "claude-opus-5-5": {"name": "Opus 5.5", "provider": "anthropic", "tier": "top", "in": 4.0, "out": 20.0, "cache_read": 0.20,
+                      "desc": "가장 똑똑해요. 깊은 설명, 증명, 오답 원인 진단에 강해요."},
+  "claude-sonnet-5-5": {"name": "Sonnet 5.5", "provider": "anthropic", "tier": "mid", "in": 2.0, "out": 10.0, "cache_read": 0.20,
+                        "desc": "약 절반 비용. 일반 개념 설명과 문제 풀이는 충분히 잘해요."},
+  "claude-haiku-5-5": {"name": "Haiku 5.5", "provider": "anthropic", "tier": "low", "in": 0.10, "out": 0.50, "cache_read": 0.01, "fallback": false,
+                       "long": {"over": 100000, "in": 0.50, "out": 2.50, "cache_read": 0.05},
+                       "desc": "가장 싸요 (Sonnet의 약 1/20). 복습·연습·짧은 질문엔 괜찮지만 깊은 설명은 약해요."},
+  "gpt-6-astra": {"name": "GPT-6 Astra", "provider": "openai", "tier": "top", "in": 10.0, "out": 50.0, "cache_read": 1.00, "cw": 1.25,
+                  "desc": "OpenAI 최상위. Opus보다 비싸요."},
+  "gpt-6.1-sol": {"name": "GPT-6.1 Sol", "provider": "openai", "tier": "mid", "in": 2.0, "out": 10.0, "cache_read": 0.10, "cw": 1.25,
+                  "desc": "OpenAI 중간. 단가는 Sonnet과 같고 캐시 읽기가 더 싸요."},
+  "gpt-6.1-terra": {"name": "GPT-6.1 Terra", "provider": "openai", "tier": "low", "in": 1.0, "out": 5.0, "cache_read": 0.05, "cw": 1.25,
+                    "desc": "Sol의 절반 비용."},
+  "gpt-6-luna": {"name": "GPT-6 Luna", "provider": "openai", "tier": "low", "in": 0.10, "out": 0.50, "cache_read": 0.01, "cw": 1.25,
+                 "desc": "가장 싸요. 짧은 연습용."},
+  "gemini-4-neon": {"name": "Gemini 4 Neon", "provider": "google", "tier": "top", "in": 3.0, "out": 15.0, "cache_read": 0.15, "cw": 1.0,
+                    "desc": "Google 상위 모델. Sonnet보다 조금 비싸고 Opus보다 싸요. 설명이 길고 꼼꼼하지만 느린 편이에요."},
+  "gemini-4-hydrogen": {"name": "Gemini 4 Hydrogen", "provider": "google", "tier": "mid", "in": 1.5, "out": 7.5, "cache_read": 0.075, "cw": 1.0,
+                        "desc": "Google 중간 (Gemini 4). 단가가 Sonnet과 비슷해요."},
+  "gemini-3.5-flash-lite": {"name": "Gemini 3.5 Flash-Lite", "provider": "google", "tier": "low", "in": 0.30, "out": 2.50, "cache_read": 0.03, "cw": 1.0,
+                            "desc": "Google에서 가장 싸요. 짧은 연습용."}
+ },
+ "default": {"openai": "gpt-6.1-sol", "google": "gemini-4-neon"},
+ "review": {"anthropic": "claude-sonnet-5-5", "openai": "gpt-6.1-sol", "google": "gemini-4-hydrogen"},
+ "cheap": {"anthropic": "claude-haiku-5-5", "openai": "gpt-6-luna", "google": "gemini-3.5-flash-lite"},
+ "replace": {"gemini-3.8-flash": "gemini-4-hydrogen"}
+}
